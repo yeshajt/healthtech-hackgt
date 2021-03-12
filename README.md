@@ -14,7 +14,7 @@
 
 ### Fitness and Nutrition
 
-1.
+1. An app/organizing tool that creates customized meal plans for students that help them use up all their meal swipes and maintain a nutritious diet.
 
 ### Women's + Reproductive Health
 
