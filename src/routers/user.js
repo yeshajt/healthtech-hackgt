@@ -19,6 +19,7 @@ const upload = multer({
 })
 
 router.post('/users', async (req, res) => {
+    req.body.currentCalorieCount = req.body.militaryCalorieCount
     const user = new User(req.body)
     try {
         await user.save()
@@ -40,6 +41,10 @@ router.post('/users/login', async (req, res) => {
     } catch (e) {
         res.status(400).send(e)
     }
+})
+
+router.get('/users/me', auth, async (req, res) => {
+    res.send(req.user)
 })
 
 router.post('/users/logout', auth, async (req, res) => {
@@ -75,9 +80,7 @@ router.post('/users/me/avatar', auth, upload.single('avatar'), async (req, res) 
     res.status(400).send({error: error.message})
 })
 
-router.get('/users/me', auth, async (req, res) => {
-    res.send(req.user)
-})
+
 
 router.patch('/users/me', auth, async (req, res) => {
     const updates = Object.keys(req.body)
