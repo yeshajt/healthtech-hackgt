@@ -4,6 +4,7 @@ const sharp  = require('sharp')
 const router = new express.Router()
 const auth = require('../middleware/auth')
 const User = require('../models/user')
+const Food = require('../models/food')
 const { sendWelcomeEmail, sendCancellationEmail } = require('../emails/account')
 const upload = multer({
     limits: {
@@ -19,7 +20,6 @@ const upload = multer({
 })
 
 router.post('/users', async (req, res) => {
-    req.body.currentCalorieCount = req.body.militaryCalorieCount
     const user = new User(req.body)
     try {
         await user.save()
@@ -58,6 +58,26 @@ router.post('/users/logout', auth, async (req, res) => {
     } catch (e) {
         res.status(500).send()
     }
+})
+
+router.patch('/users/update', auth, async (req, res) => {
+    let newCal = req.user.currentCalorieCount - 200
+    if (newCal < req.user.goalCalorieCount) {
+        newCal = req.user.goalCalorieCount
+    }
+    try {
+        await User.findByIdAndUpdate(req.user._id, {
+            dailyCaloriesEaten: 0,
+            currentCalorieCount: newCal
+        })
+        await Food.deleteMany({owner: req.user._id})
+        const newUser = await User.findById(req.user._id)
+        res.status(200).send(newUser)
+    } catch (e) {
+        console.log(e)
+        res.status(400).send(e)
+    }
+    
 })
 
 router.post('/users/logoutAll', auth, async (req, res) => {

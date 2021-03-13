@@ -59,6 +59,17 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 4500
     },
+    dailyCaloriesEaten: {
+        type: Number,
+        default: 0
+    },
+    restrictions: {
+        type: String
+    },
+    dailyBudget: {
+        type: Number,
+        default: 20
+    },
     tokens: [{
         token: {
             type: String,
@@ -111,6 +122,15 @@ userSchema.statics.findByCredentials = async (email, password) => {
     }
 
     return user
+}
+
+userSchema.methods.decrementCurrentCalorieCount = async function () {
+    const user = this
+    this.currentCalorieCount = this.militaryCalorieCount - 200
+    if (currentCalorieCount < militaryCalorieCount) {
+        this.currentCalorieCount = this.goalCalorieCount
+    }
+    await user.save()
 }
 
 //Need access to this binding for middleware function here
