@@ -21,7 +21,9 @@ window.onload = async function() {
         resolve(fetch(url + "/users/login", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:8080',
+                'Access-Control-Allow-Credentials': 'true'
             },
             body: JSON.stringify({
                 "email": "ninaadlakshman@gmail.com",
