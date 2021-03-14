@@ -6,6 +6,7 @@ window.onload = async function() {
     
     const loginUser = (email, password) => {
         return new Promise(function (resolve, reject) {
+            // what is url??    
             resolve(fetch(url + "/users/login", {
                 method: 'POST',
                 headers: {
@@ -29,8 +30,8 @@ window.onload = async function() {
             //Essentially, when you login, you get a new password to do functions
             token = user.token
             console.log("LOGIN USER ONLY: ", token, email, password)
-            if (!(user === {}) {
-                window.location.href = '/html/home.html'
+            if (!(user === {})) {
+                window.location.href = '/html/tracker.html'
                 
             }
         })
