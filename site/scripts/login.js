@@ -7,8 +7,9 @@ window.onload = async function() {
     
     const loginUser = (email, password) => {
         return new Promise(function (resolve, reject) {
-            // what is url??    
+            // what is url??
             resolve(fetch(url + "/users/login", {
+                mode: 'no-curs',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
