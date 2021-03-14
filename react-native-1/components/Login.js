@@ -21,30 +21,21 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   textInput: {
-    width: '50%',
-    height: 60,
-    backgroundColor: '#264653',
-    borderBottomColor: '#FFFFFF',
+    width: "50%",
+    height: 40,
     borderBottomWidth: 2,
-    marginBottom: 10
+    borderBottomColor: '#FFFFFF'
   },
-
-  loginButton: {
+  loginbutton: {
     backgroundColor: '#E9C46A',
-    color: '#000000',
-    width: '100%',
     padding: 10,
-    marginBottom: 10
+    color: '#000000'
   },
 
-  signupButton: {
+  signupbutton: {
     backgroundColor: '#264653',
-    color: '#FFFFFF',
-  },
-
-  labelStyle: {
-    color: '#FFFFFF',
-  },
+    color: '#FFFFFF'
+  }
 });
 
 export default class extends React.Component {
@@ -55,7 +46,6 @@ export default class extends React.Component {
       onRight: () => {},
     });
   };
-  
 
   render() {
     const title = this.props.title || 'No Title';
@@ -63,10 +53,7 @@ export default class extends React.Component {
     console.log('Login RENDER');
     return (
       <View style={[styles.container, this.props.style]}>
-        <Text
-          style={styles.labelStyle}>
-            Username
-        </Text>
+        <Text>Username</Text>
         <TextInput
           style={styles.textInput}
           placeholder={"Username"}
@@ -74,9 +61,7 @@ export default class extends React.Component {
             console.log("here")
           }}
         />
-        <Text
-          style={styles.labelStyle}>
-            Password</Text>
+        <Text>Password</Text>
         <TextInput
           style={styles.textInput}
           placeholder={"Password"}
@@ -86,29 +71,18 @@ export default class extends React.Component {
         />
         
         <Button 
-          style={styles.loginButton}
+          style={styles.loginbutton}
           onPress={() => console.log("Button Pressed")}>
-          Log In
+          Login
         </Button>
 
         <Button 
-          style={styles.signupButton}
+          style={styles.signupbutton}
           onPress={() => Actions.loginModal2()}>
           Sign Up
         </Button>
-      </View>
-    );
-  }
-}
 
-  /*
-  render() {
-    const title = this.props.title || 'No Title';
-    const data = this.props.data || 'No Data';
-    console.log('Login RENDER');
-    return (
-      <View style={[styles.container, this.props.style]}>
-        <Text>Login page 1</Text>
+        {/* <Text>Login page 1</Text>
         <Text>Title: {title}</Text>
         <Text>Data: {data}</Text>
         <Button
@@ -123,9 +97,8 @@ export default class extends React.Component {
           }>
           Change title
         </Button>
-        <Button onPress={Actions.pop}>Back</Button>
+        <Button onPress={Actions.pop}>Back</Button> */}
       </View>
     );
   }
-  */
-
+}
