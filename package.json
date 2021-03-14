@@ -2,6 +2,9 @@
   "name": "task-manager",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "14.15.4"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
