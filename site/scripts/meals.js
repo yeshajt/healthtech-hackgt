@@ -70,9 +70,16 @@ window.onload = async function() {
                 let foodName = food.label
                 let src = food.image
                 let cost = food.price
+
+                var container = Document.createElement("div");
+                container.className = "meal-container";
+                var containerWrapper = Document.createElement("div");
+                containerWrapper.className = "containerWrapper";
+                container.appendChild(containerWrapper);
                     
                 var img = Document.createElement("img");
-                img.src = src
+                img.src = src;
+                img.className = "meal-image";
                 containerWrapper.appendChild(img);
 
                 var bottom_container = Document.createElement("div");
@@ -96,6 +103,7 @@ window.onload = async function() {
                 var checkbox = Document.createElement("input");
                 checkbox.type = "checkbox"
                 checkbox.className = "food-eaten"
+                checkbox.value = "food-eaten"
                 bottom_container.appendChild(checkbox);
                 
                 meals_wrapper_div.appendChild(container)
