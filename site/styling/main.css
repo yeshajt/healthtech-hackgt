@@ -47,3 +47,53 @@
     background-color: #E9C46A;
     margin-left: 49%;
 }
+
+.meal-container {
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+.meal-image {
+    width: 25%;
+}
+
+.bottom-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-container {
+    padding-bottom: 5px;
+}
+
+.food-name {
+    color: black;
+}
+
+.food-cost {
+    color: black;
+}
+
+.meals-wrapper {
+    margin: 20px;
+}
+
+.containerWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.back-button {
+    background-color: #E9C46A;
+    margin-left: 5%;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+}
