@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@react-navigation/native": "^3.8.4"
+  }
+}
