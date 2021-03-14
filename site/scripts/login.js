@@ -30,7 +30,7 @@ window.onload = async function() {
             token = user.token
             console.log("LOGIN USER ONLY: ", token, email, password)
             if (!(user === {}) {
-                //Make sure to add the next window location below here
+                window.location.href = '/html/home.html'
                 
             }
         })
