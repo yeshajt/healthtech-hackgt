@@ -1,10 +1,9 @@
-//THIS IS NOT REQUIRED IN PLAIN JS, just Node
+//DON'T ADD THE LINE BELOW IN PLAIN JS, just Node
 const fetch = require('node-fetch')
 
 
 const url = "http://1faac51a2a99.ngrok.io"
 let authToken = ""
-let user = {}
 
 const createUser = (name, age, email, sex, password, restrictions) => {
     return new Promise(function (resolve, reject) {
@@ -23,7 +22,6 @@ const createUser = (name, age, email, sex, password, restrictions) => {
             })
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -42,7 +40,6 @@ const loginUser = (email, password) => {
             })
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -66,7 +63,6 @@ const addFoodChoices = (token) => {
             })
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -82,7 +78,6 @@ const getUserProfile = (token) => {
             }
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -98,7 +93,6 @@ const getFoods = (token) => {
             }
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -114,7 +108,6 @@ const updateFoodAsEaten = (_id, token) => {
             }
         }).then((response) => response.json())
         .then((data) => {
-            user = data
             return data
         }))
     })
@@ -130,7 +123,6 @@ const updateNewDay = (token) => {
             }
         }).then((response) => response.json())
         .then((data) => {
-            console.log(data)
             return data
         }))
     })
@@ -139,27 +131,33 @@ const updateNewDay = (token) => {
 const deleteUser = (token) => {
     return new Promise(function (resolve, reject) {
         resolve(fetch(url + "/users/me", {
-            method: 'delete',
+            method: 'DELETE',
             headers: {
                 'Authorization': 'Bearer ' + token,
                 'Content-Type': 'application/json'
             }
-        }).then((response) => response.json())
-        .then((data) => {
-            console.log(data)
-            return data
-        }))
-    })
+        }).then((response) => response.text())
+    )})
 }
 
-
+const deleteFoodChoices = (token) => {
+    return new Promise(function (resolve, reject) {
+        resolve(fetch(url + "/foods", {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => response.text()))
+    })
+}
 const name = "Ninaad"
 const age = 18
 const email = "nlakshman12@gatech.edu"
 const sex = "male"
 const password = "Ninaad123"
 const restrictions = "vegetarian"
-createUser(name, age, email, sex, password, restrictions).then((value) => {
+createUser(name, age, email, sex, password, restrictions).then(async (value) => {
     //Think of this token as the password to get in, you get one when you create a user
     let token = value.token
 
@@ -168,33 +166,39 @@ createUser(name, age, email, sex, password, restrictions).then((value) => {
     
 })
 
-loginUser(email, password).then((user) => {
+loginUser(email, password).then(async (user) => {
     //Essentially, when you login, you get a new password to do functions
     token = user.token
 
     //Have to make all calls to user and updates, etc. here
-    addFoodChoices(token).then((foods) => {
+    addFoodChoices(token).then(async (foods) => {
         //an array of foods
         //to call a specific food item, use []
         //to call components in the food items, use Ex: foods[0].protein
         console.log(foods)
         
         //EX:
-        const _id1 = foods[0]._id
-        const _id2 = foods[1]._id
-        const _id3 = foods[2]._id
-
-        //ID of the Food that has been checked
-        let _id = {}
-        //Some condition like when the _id1 button has been clicked
-        if(true) {
-            //Set this id to the food's id that has been clicked
-            _id = _id1
+        let _id1 = ""
+        let _id2 = ""
+        let _id3 = ""
+        //Only if foods are available will you update one
+        if (foods) {
+            console.log(foods[0])
+            _id1 = foods[0]._id
+            _id2 = foods[1]._id
+            _id3 = foods[2]._id
+            //ID of the Food that has been checked
+            let _idOfFood = {}
+            //Some condition like when the _id1 button has been clicked
+            if(true) {
+                //Set this id to the food's id that has been clicked
+                _idOfFood = _id1
+            }
+            //Have to make updateFoodAsEaten call in addFoodChoices or readFoodChoices
+            updateFoodAsEaten(_idOfFood, token).then((dailyCaloriesEaten) => {
+                console.log(dailyCaloriesEaten)
+            })
         }
-        //Have to make update call in addFoodChoices or readFoodChoices
-        updateFoodAsEaten(_id, token).then((dailyCaloriesEaten) => {
-            console.log(dailyCaloriesEaten)
-        })
     })
 
     getUserProfile(token).then((user) => {
@@ -219,13 +223,11 @@ loginUser(email, password).then((user) => {
 
     //Deletes user from database... token becomes invalid
     deleteUser(token).then((user) => {
-        //a user object
-        console.log(user)
+        //Nothing is sent back
     })
 
     //Deletes food choices for a user from database
-    deleteFoodChoices(token).then((user) => {
-        //a user object
-        console.log(user)
+    deleteFoodChoices(token).then((message) => {
+        //Nothing is sent back
     })
 })
