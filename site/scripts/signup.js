@@ -74,7 +74,7 @@ window.onload = async function() {
     submit_button_div.onclick = function() {
 
 
-        window.location.href = '/html/tracker.html'
+        window.location.href = 'html/tracker.html'
     }
 
 }

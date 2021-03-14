@@ -1,10 +1,15 @@
 import {
-    currRecipie
+    currRecipie,
+    email,
+    password
 } from './global-variables.js'
 
+
 window.onload = async function() {
-    const meals_wrapper_div = Document.getElementById("meals-wrapper");
-    const back_button = Document.getElementById("back-button");
+    const meals_wrapper_div = document.getElementById("meals-wrapper");
+    const back_button = document.getElementById("back-button");
+
+    const url = "http://1faac51a2a99.ngrok.io"
 
 
     back_button.onclick = function() {
@@ -16,11 +21,12 @@ window.onload = async function() {
         resolve(fetch(url + "/users/login", {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:8080'
             },
             body: JSON.stringify({
-                "email": email,
-                "password": password
+                "email": "ninaadlakshman@gmail.com",
+                "password": "Ninaad123"
             })
         }).then((response) => response.json())
             .then((data) => {
@@ -95,10 +101,10 @@ window.onload = async function() {
                 name.innerHTML = foodName;
                 info_container.appendChild(name);
 
-                var cost = Document.createElement("div");
-                cost.className = "food-cost";
-                cost.innerHTML = cost;
-                info_container.appendChild(cost);
+                var cost_item = Document.createElement("div");
+                cost_item.className = "food-cost";
+                cost_item.innerHTML = cost;
+                info_container.appendChild(cost_item);
 
                 var checkbox = Document.createElement("input");
                 checkbox.type = "checkbox"
@@ -156,4 +162,5 @@ window.onload = async function() {
         // bottom_container.appendChild(checkbox);
 
 
+    })
 }

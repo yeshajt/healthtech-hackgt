@@ -51,7 +51,7 @@ window.onload = async function() {
 //     }
 
     signup_button.onclick = function() {
-        window.location.href = '/html/signup.html'
+        window.location.href = 'html/signup.html'
     }
 
 }

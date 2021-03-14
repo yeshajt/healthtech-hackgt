@@ -15,3 +15,7 @@ function setCurrRecipie(imgLink, foodName, servingSize, cost) {
     currRecipie.img_src = imgLink;
     currRecipie.cost = cost;
 }
+
+export {currRecipie, setCurrRecipie}
+export var email = ""
+export var password = ""
