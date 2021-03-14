@@ -186,6 +186,7 @@ loginUser(email, password).then(async (user) => {
         //to call a specific food item, use []
         //to call components in the food items, use Ex: foods[0].protein
         console.log("FOOD ITEMS: " + foods)
+        //UPDATE STUFF HERE TO PAGE
     })
 })
 
@@ -222,6 +223,7 @@ loginUser(email, password).then(async (user) => {
             //Have to make updateFoodAsEaten call in addFoodChoices or readFoodChoices
             updateFoodAsEaten(_idOfFood, token).then((dailyCaloriesEaten) => {
                 console.log("UPDATE FOOD: ", dailyCaloriesEaten)
+                //UPDATE STUFF HERE TO PAGE
             })
         }
     })
@@ -236,6 +238,7 @@ loginUser(email, password).then(async (user) => {
         //a user object
         //to call components in the food items, use Ex: user.currentCalorieCount
         console.log("USER PROFILE: ", user)
+        //UPDATE STUFF HERE TO PAGE
     })
 })
 
@@ -249,6 +252,7 @@ loginUser(email, password).then(async (user) => {
         //to call a specific food item, use []
         //to call components in the food items, use Ex: foods[0].protein
         console.log("FOOD CHOICES: ", foods)
+        //UPDATE STUFF HERE TO PAGE
     })
 })
 
@@ -262,6 +266,7 @@ loginUser(email, password).then(async (user) => {
         //a user object
         //to call components in the food items, use Ex: user.currentCalorieCount
         console.log("UPDATE TO NEW DAY: ", user)
+        //UPDATE STUFF HERE TO PAGE
     })
 })
 
