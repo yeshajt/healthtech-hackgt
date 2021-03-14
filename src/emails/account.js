@@ -15,7 +15,7 @@ const sendCancellationEmail = (name, email) => {
         to: email,
         from: 'ninaadlak@gmail.com',
         subject: 'Account Deletion',
-        text: "So sad to see you go " + name + "! Let us know why you cancelled here."
+        text: "So sad to see you go " + name + "! Please let us know why you cancelled here."
     })
 }
 
