@@ -115,9 +115,8 @@ router.patch('/foods/:id/eaten', auth, async (req, res) => {
 })
 
 router.delete('/foods', auth, async (req, res) => {
-    const _id = req.params.id
     try {
-        const food = await Food.deleteMany({_id, owner: req.user._id})
+        const food = await Food.deleteMany({owner: req.user._id})
         if (!food) {
             return res.status(404).send()
         }

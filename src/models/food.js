@@ -51,7 +51,7 @@ const foodSchema = mongoose.Schema({
             ref: "User"
         },
         image: {
-            type: Buffer
+            type: String
         }
 }, {
     timestamps: true

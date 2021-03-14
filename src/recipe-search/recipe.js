@@ -11,7 +11,8 @@ const findRecipe = (searchTerm, minCalorie, maxCalorie, restrictions) => {
         protein: 0,
         carb: 0,
         sugar: 0,
-        ingredients: ""
+        ingredients: "",
+        image: ""
     }
     let url = "https://api.edamam.com/search?"
     url += "q=" + searchTerm + "&"
@@ -22,6 +23,7 @@ const findRecipe = (searchTerm, minCalorie, maxCalorie, restrictions) => {
     if (restrictions) {
         url += "health=" + restrictions + "&"
     }
+    url += "imageSize=" + "SMALL" + "&"
     const res = request('GET', url);
     const body = JSON.parse(res.getBody('utf8'))
 
@@ -37,6 +39,8 @@ const findRecipe = (searchTerm, minCalorie, maxCalorie, restrictions) => {
     recipeData.carb = Math.floor(body.hits[randItem].recipe.totalNutrients.CHOCDF.quantity)
     recipeData.sugar = Math.floor(body.hits[randItem].recipe.totalNutrients.SUGAR.quantity)
     recipeData.protein = Math.floor(body.hits[randItem].recipe.totalNutrients.PROCNT.quantity)
+    recipeData.image = body.hits[randItem].recipe.image
+
     let ingredients = ""
     body.hits[randItem].recipe.ingredientLines.forEach((val) => {
         ingredients += val + ", "
