@@ -5,7 +5,6 @@
     display: none;
 }
 .header {
-    position: fixed;
     background-color: #264653;
     height: 20%;
     width: 100%;
@@ -19,12 +18,22 @@
     margin: auto;
 }
 .fields-wrapper {
-    padding-top: 10%;
-    padding-left: 5%;
+    margin: 4rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+}
+
+.signup-wrapper {
+    background-color: #2A9D8F;
 }
 .signup-submit {
     background-color: #E9C46A;
     margin-left: 5%;
+    margin-top: 1rem;
 }
 .username-wrapper .password-wrapper .age-wrapper .sex-wrapper .allergies-wrapper .dietary-wrapper .starting-wrapper .ending-wrapper .daily-budget {
     border: 15px solid #264653;
@@ -38,10 +47,6 @@
 }
 #signup-button {
     background-color: #E9C46A;
-}
-.progress-counter {
-    padding-top: 15%;
-    padding-left: 40%;
 }
 .decrement {
     background-color: #E9C46A;
@@ -96,4 +101,71 @@
 .button-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.all-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.logo {
+    width: 50%;
+}
+
+.logo-wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.description {
+    margin-bottom: 1rem;
+}
+
+.login-email {
+    margin-bottom: 1rem;
+}
+
+.login-pass {
+    margin-bottom: 1rem;
+}
+
+.loginButton-wrapper {
+    margin-bottom: 1rem;
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rec-header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.rec-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipie-ingredients {
+    word-wrap: wrap
 }

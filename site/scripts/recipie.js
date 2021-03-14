@@ -19,7 +19,7 @@ window.onload = async function() {
     serving_size_div.innerHTML = currRecipie.servingSize;
     
     var img = document.createElement('img')
-    img.src = currRecipie.img_src;
+    img.src = "https://www.edamam.com/web-img/351/351373054c8e6fafb7e79003572e5609";
     img.alt = "Picture of " + currRecipie.name;
     image_div.appendChild(img);
 
@@ -30,7 +30,7 @@ window.onload = async function() {
 
 
     back_button.onclick = function() {
-        window.location.href = "/html/meals.html"
+        window.location.href = "/html/tracker.html"
         
     }
 }

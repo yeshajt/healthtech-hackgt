@@ -28,13 +28,8 @@ window.onload = async function() {
    
     
     login_button.onclick = async () => {
-        var email = email_field.value;
-        var password = password_field.value;
-        const user = await loginUser(email, password)
-        token = user.token
-        if (!(user === {})) {
-                window.location.href = '/html/tracker.html'
-        }
+        window.location.href = '/html/tracker.html'
+
     }
     
 //     login_button.onclick = function() {

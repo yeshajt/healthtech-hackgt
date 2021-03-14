@@ -13,26 +13,83 @@
     <div class="header">
         <div class="header-text">Jane M. Doe</div> <!-- replace this with the name with js from the api later -->
     </div>
-
-    <div class="progress-counter">
-        <div class="progress-circle p10">
-            <span>300/3000 calories</span> <!-- this is a placeholder value to be replaced by the output of the js code -->
-            <div class="left-half-clipper">
-                <div class="first50-bar"></div>
-                <div class="value-bar"></div>
+    <div class="progress-counter-wrapper">
+        <div class="progress-counter">
+            <div class="progress-circle p10">
+                <span>300/3000 calories</span> <!-- this is a placeholder value to be replaced by the output of the js code -->
+                <div class="left-half-clipper">
+                    <div class="first50-bar"></div>
+                    <div class="value-bar"></div>
+                </div>
             </div>
         </div>
     </div>
-    <br>
 
-    <button class="decrement" id="decrement">
-        Reduce!
-    </button>
-    <br>
-    <br>
+    <a href="recipie.html" class="meals-click">
+        <div class="meals-wrapper" id="meals-wrapper">
+            <div class="meal-container">
+                <div class="containerWrapper">
+                    <img class="meal-image" src="https://www.edamam.com/web-img/351/351373054c8e6fafb7e79003572e5609">
+                    <div class="bottom-container">
+                        <div class="info-container">
+                            <div class="food-name">
+                                Rigatoni With Spicy Salami and Tomato
+                            </div>
+                            <div class="food-cost">
+                                Price: $8.50
+                            </div>
+                        </div>
+                        <input type="checkbox" class="food-eaten" id="food-eaten"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
 
-    <button class="goToRecipes" id="goToRecipes">
-        Go to all recipes
-    </button>
+
+    <a href="recipie.html" class="meals-click">
+        <div class="meals-wrapper" id="meals-wrapper">
+            <div class="meal-container">
+                <div class="containerWrapper">
+                    <img class="meal-image" src="https://www.edamam.com/web-img/185/185e1ef700299710727c84908e61bb79.jpg">
+                    <div class="bottom-container">
+                        <div class="info-container">
+                            <div class="food-name">
+                                Breakfast Grilled Cheese
+                            </div>
+                            <div class="food-cost">
+                                Price: $7.75
+                            </div>
+                        </div>
+                        <input type="checkbox" class="food-eaten" id="food-eaten"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+    <a href="recipie.html" class="meals-click">
+        <div class="meals-wrapper" id="meals-wrapper">
+            <div class="meal-container">
+                <div class="containerWrapper">
+                    <img class="meal-image" src="https://www.edamam.com/web-img/1dd/1ddc9d05b1a3dcefe4c3cc7f8d3b562d.jpg">
+                    <div class="bottom-container">
+                        <div class="info-container">
+                            <div class="food-name">
+                                Snap Peas 'n' Ham Alfredo
+                            </div>
+                            <div class="food-cost">
+                                Price: $8.75
+                            </div>
+                        </div>
+                        <input type="checkbox" class="food-eaten" id="food-eaten"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </a>
+
+
     <script type="module" src="../scripts/tracker.js"></script>
 </body>
