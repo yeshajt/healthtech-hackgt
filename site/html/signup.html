@@ -10,10 +10,22 @@
     <div class="fields-wrapper">
     </div>
     <div class="username-wrapper">
-        <input type="text" id="login-username" placeholder="Username">
+        <input type="text" id="login-username" placeholder="Email">
     </div>
     <div class="password-wrapper">
         <input type="text" id="login-password" placeholder="Password">
+    </div>
+
+    <div class="age-wrapper">
+        <input type="text" id="user-age" placeholder="Age">
+    </div>
+
+    <div class="sex-wrapper">
+        <input type="checkbox" id="sex-male" value="sex-male">
+        <label for="sex-male">Male</label>
+
+        <input type="checkbox" id="sex-female" value="sex-female">
+        <label for="sex-female">Female</label>
     </div>
 
     <div class="allergies-wrapper">
@@ -24,21 +36,18 @@
             <input type="checkbox" id="allergy-peanut" value="peanut">
             <label for="allergy-peanut">Peanut/Tree Nuts</label><br>
 
-            <input type="checkbox" id="allergy-dairy" value="peanut">
+            <input type="checkbox" id="allergy-dairy" value="dairy">
             <label for="allergy-dairy">Dairy</label><br>
 
-            <input type="checkbox" id="allergy-gluten" value="peanut">
+            <input type="checkbox" id="allergy-gluten" value="gluten">
             <label for="allergy-gluten">Gluten</label><br>
 
-            <input type="checkbox" id="allergy-shellfish" value="peanut">
+            <input type="checkbox" id="allergy-shellfish" value="shellfish">
             <label for="allergy-shellfish">Shellfish</label><br>
         </div>
         <div class="allergies-other">
-            <div class="allergies-other-label">
-                Other
-            </div>
             <div class="allergies-other-text">
-                <input type="text" id="allergies-other" placeholder="Other">
+                <input type="text" id="allergy-other" placeholder="Other">
             </div>
         </div>
     </div>
@@ -48,26 +57,72 @@
             Dietary Restrictions
         </div>
         <div class="dietary-checkboxes">
-            <input type="checkbox" id="allergy-gluten" value="peanut">
-            <label for="allergy-peanut">Gluten-free-</label><br>
+            <input type="checkbox" id="dietary-gluten" value="glutenfree">
+            <label for="dietary-gluten">Gluten-free</label><br>
 
-            <input type="checkbox" id="allergy-peanut" value="peanut">
-            <label for="allergy-peanut">Dairy</label><br>
+            <input type="checkbox" id="dietary-pescatarian" value="pescatarian">
+            <label for="dietary-pescatarian">Pescatarian</label><br>
 
-            <input type="checkbox" id="allergy-peanut" value="peanut">
-            <label for="allergy-peanut">Gluten</label><br>
+            <input type="checkbox" id="dietary-vegetarian" value="vegetarian">
+            <label for="dietary-vegetarian">Vegetarian</label><br>
 
-            <input type="checkbox" id="allergy-peanut" value="peanut">
-            <label for="allergy-peanut">Shellfish</label><br>
+            <input type="checkbox" id="dietary-vegan" value="vegan">
+            <label for="dietary-vegan">Vegan</label><br>
         </div>
-        <div class="allergies-other">
-            <div class="allergies-other-label">
+        <div class="dietary-other">
+            <div class="dietary-other-label">
                 Other
             </div>
-            <div class="allergies-other-text">
-                <input type="text" id="allergies-other" placeholder="Other">
+            <div class="dietary-other-text">
+                <input type="text" id="dietary-other" placeholder="Other">
             </div>
         </div>
     </div>
 
+    <div class="starting-wrapper">
+        <div class="starting-label">
+            Starting Military Diet
+        </div>
+        <div class="starting-checkboxes">
+            <input type="checkbox" id="starting-default" value="starting-default">
+            <label for="starting-default">Default</label>
+
+            <input type="checkbox" id="starting-custom" value="starting-custom">
+            <label for="starting-custom">Custom</label>
+        </div>
+
+        <div class="starting-custom-fields not-visible" id="starting-custom-fields">
+            <input type="text" id="starting-calorie" placeholder="Calorie Intake">
+            <input type="text" id="starting-protein" placeholder="Protein Intake">
+            <input type="text" id="starting-fat" placeholder="Fat Intake">
+        </div>
+    </div>
+
+    <div class="ending-wrapper">
+        <div class="ending-label">
+            Goal Diet
+        </div>
+        <div class="ending-checkboxes">
+            <input type="checkbox" id="ending-default" value="ending-default">
+            <label for="ending-default">Default</label>
+
+            <input type="checkbox" id="ending-custom" value="ending-custom">
+            <label for="ending-custom">Custom</label>
+        </div>
+
+        <div class="ending-custom-fields not-visible" id="ending-custom-fields">
+            <input type="text" id="ending-calorie" placeholder="Calorie Intake">
+            <input type="text" id="ending-protein" placeholder="Protein Intake">
+            <input type="text" id="ending-fat" placeholder="Fat Intake">
+        </div>
+    </div>
+
+    <div class="daily-budget">
+        <input type="text" id="daily-budget" placeholder="Daily budget for meals">
+    </div>
+
+    <button class="signup-submit" id="signup-submit">
+        Submit
+    </button>
+    <script type="text/javascript" src="./scripts/signup.js"></script>
 </body>
