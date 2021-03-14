@@ -3,6 +3,7 @@ window.onload = async function() {
     const email_field = document.getElementById("login-username");
     const password_field = document.getElementById("login-password");
     const signup_button = document.getElementById("signup-button"); //delete if you don't use this
+    const url = "http://1faac51a2a99.ngrok.io"
     
     const loginUser = (email, password) => {
         return new Promise(function (resolve, reject) {
