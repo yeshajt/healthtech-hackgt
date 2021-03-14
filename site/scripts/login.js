@@ -26,19 +26,33 @@ window.onload = async function() {
         })
     }
     
-    login_button.onclick = function() {
+    login_button.onclick = async () => {
         var email = email_field.value;
         var password = password_field.value;
-        loginUser(email, password).then(async (user) => {
+        await loginUser(email, password).then(async (user) => {
             //Essentially, when you login, you get a new password to do functions
             token = user.token
             console.log("LOGIN USER ONLY: ", token, email, password)
             if (!(user === {})) {
                 window.location.href = '/html/tracker.html'
-                
             }
         })
+        
     }
+    
+//     login_button.onclick = function() {
+//         var email = email_field.value;
+//         var password = password_field.value;
+//         loginUser(email, password).then(async (user) => {
+//             //Essentially, when you login, you get a new password to do functions
+//             token = user.token
+//             console.log("LOGIN USER ONLY: ", token, email, password)
+//             if (!(user === {})) {
+//                 window.location.href = '/html/tracker.html'
+//             }
+//         })
+        
+//     }
 
     signup_button.onclick = function() {
         window.location.href = '/html/signup.html'
