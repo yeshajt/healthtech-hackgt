@@ -1,5 +1,5 @@
 {
-  "name": "task-manager",
+  "name": "healthtech-hackgt",
   "version": "1.0.0",
   "description": "",
   "engines": {
@@ -33,5 +33,16 @@
     "nodemon": "^1.18.9"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeshajt/healthtech-hackgt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yeshajt/healthtech-hackgt/issues"
+  },
+  "homepage": "https://github.com/yeshajt/healthtech-hackgt#readme"
 }
