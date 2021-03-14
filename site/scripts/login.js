@@ -9,7 +9,7 @@ window.onload = async function() {
         return new Promise(function (resolve, reject) {
             // what is url??
             resolve(fetch(url + "/users/login", {
-                mode: 'no-curs',
+                mode: 'no-cors',
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
