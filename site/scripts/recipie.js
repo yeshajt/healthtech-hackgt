@@ -19,7 +19,7 @@ window.onload = async function() {
     serving_size_div.innerHTML = currRecipie.servingSize;
     
     var img = Document.createElement('img')
-    img.src = currRecipie.src;
+    img.src = currRecipie.img_src;
     img.alt = "Picture of " + currRecipie.name;
     image_div.appendChild(img);
 
