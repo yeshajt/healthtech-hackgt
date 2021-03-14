@@ -31,9 +31,6 @@ window.onload = async function() {
         var email = email_field.value;
         var password = password_field.value;
         const user = await loginUser(email, password)
-        if (!(user === {})) {
-                window.location.href = '/html/tracker.html'
-        }
         token = user.token
         if (!(user === {})) {
                 window.location.href = '/html/tracker.html'
