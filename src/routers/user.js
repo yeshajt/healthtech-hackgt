@@ -36,7 +36,9 @@ router.post('/users', async (req, res) => {
 router.post('/users/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.email, req.body.password)
+        console.log("USER: " + user)
         const token = await user.generateAuthToken()
+        console.log("TOKEN: " + token)
         res.send({ user, token})
     } catch (e) {
         res.status(400).send(e)
@@ -58,6 +60,10 @@ router.post('/users/logout', auth, async (req, res) => {
     } catch (e) {
         res.status(500).send()
     }
+})
+
+router.post("/test", async (req, res) => {
+    res.send('hello')
 })
 
 router.patch('/users/update', auth, async (req, res) => {
