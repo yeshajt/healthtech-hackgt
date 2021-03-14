@@ -29,7 +29,10 @@ window.onload = async function() {
             //Essentially, when you login, you get a new password to do functions
             token = user.token
             console.log("LOGIN USER ONLY: ", token, email, password)
-            //Make sure to add the next window location
+            if (!(user === {}) {
+                //Make sure to add the next window location below here
+                
+            }
         })
     }
 
