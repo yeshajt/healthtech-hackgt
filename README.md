@@ -1,6 +1,6 @@
 # healthtech-hackgt
 
-# Team Members: Yesha, Udit, Ninaad, Megan
+## Team Members: Yesha, Udit, Ninaad, Megan
 
 # Inspiration
 
